@@ -1,12 +1,12 @@
 import styled from "styled-components";
-// background: ${props => props.primary ? "palevioletred" : "white"};
-// color: ${props => props.primary ? "white" : "palevioletred"};
 
 type ButtonProps = {
   primary: boolean;
 };
 
 const Button = styled.button<ButtonProps>`
+  cursor: pointer;
+
   /* Adapt the colors based on primary prop */
   background: ${({ primary }) => (primary ? "#2c2c54" : "#b33939")};
   color: white;
