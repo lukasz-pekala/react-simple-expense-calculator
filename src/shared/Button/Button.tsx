@@ -12,8 +12,9 @@ const Button = styled.button<ButtonProps>`
   color: white;
 
   font-size: 1em;
-  margin: 1em;
-  padding: 0.5em 1.25em;
+  min-width: 10em;
+  margin: 0 0.75em;
+  padding: 0.75em 1.5em;
   border: 2px solid;
   border-radius: 3px;
 
