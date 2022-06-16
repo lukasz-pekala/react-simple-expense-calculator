@@ -1,9 +1,11 @@
+import { StyledHeader } from "../Header/Header.styled";
+
 type HeaderProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 const Header = ({ children }: HeaderProps) => {
-  return <header>{children}</header>;
+  return <StyledHeader>{children}</StyledHeader>;
 };
 
 export default Header;
