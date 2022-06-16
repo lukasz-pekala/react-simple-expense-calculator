@@ -1,25 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import AddExpenseForm from "./AddExpense/AddExpenseForm";
+import BalanceList from "./BalanceList/BalanceList";
+import { BalanceItem } from "./BalanceList/models/BalanceItem";
+import { StyledHeader } from "./Header/Header.styled";
+import Container from "./styles/Container.styled";
+import GlobalStyles from "./styles/Global";
+
+const balanceItems: BalanceItem[] = [
+  {
+    id: 1,
+    name: "Rent",
+    amount: 1000,
+    type: "expense",
+    category: "Home",
+  },
+  {
+    id: 2,
+    name: "Coffee",
+    amount: 2,
+    type: "expense",
+    category: "Food",
+  },
+  {
+    id: 3,
+    name: "Gas",
+    amount: 100,
+    type: "expense",
+    category: "Car & Transport",
+  },
+  {
+    id: 4,
+    name: "Burrito",
+    amount: 10,
+    type: "expense",
+    category: "Food",
+  },
+  {
+    id: 5,
+    name: "Salary",
+    amount: 10000,
+    type: "income",
+    category: "Work",
+  },
+];
+
+const theme = {
+  colors: {
+    palmSpringsSplash: "#218c74",
+    eyeOfTheNewt: "#b33939",
+  },
+} as DefaultTheme;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Container>
+          <StyledHeader>
+            <h1>Expense App</h1>
+          </StyledHeader>
+          <AddExpenseForm />
+          <BalanceList items={balanceItems} />
+        </Container>
+      </ThemeProvider>
+    </>
   );
 }
 
