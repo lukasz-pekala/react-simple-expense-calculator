@@ -7,7 +7,6 @@ export const StyledBalanceListItem = styled(BalanceListItem)`
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  gap: 10px;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-left: 5px solid

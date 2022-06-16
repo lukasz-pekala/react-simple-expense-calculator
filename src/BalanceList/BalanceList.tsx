@@ -8,7 +8,7 @@ type BalanceListProps = {
 const BalanceList = ({ items }: BalanceListProps) => {
   return (
     <div>
-      <h1>Earnings and expenses</h1>
+      <h2>Earnings and expenses</h2>
       {items.map((item) => (
         <StyledBalanceListItem key={item.id} item={item} />
       ))}
