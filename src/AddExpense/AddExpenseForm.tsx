@@ -13,7 +13,8 @@ const StyledGenericInput = styled.div`
   gap: 8px;
   font-size: 1em;
 
-  input {
+  input,
+  select {
     font-size: 1em;
     padding: 0.5em;
     border: 1px solid #d1ccc0;
@@ -69,14 +70,17 @@ const AddExpenseForm = () => {
             </GenericInput>
 
             <GenericInput name="amount" type="number" placeholder="Amount">
-              Name
+              Value
             </GenericInput>
 
-            <label htmlFor="favouriteColor">Type</label>
-            <Field name="favouriteColor" as="select">
-              <option value="expense">Expense</option>
-              <option value="income">Income</option>
-            </Field>
+            <StyledGenericInput>
+              <label htmlFor="type">Type</label>
+              <Field name="type" as="select">
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+              </Field>
+            </StyledGenericInput>
+
             <Button primary type="submit">
               <FontAwesomeIcon className="action-icon" icon={faPlus} />
               <span> Dodaj</span>
