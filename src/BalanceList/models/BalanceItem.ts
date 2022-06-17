@@ -1,6 +1,6 @@
 export type BalanceItemType = "income" | "expense";
 export type BalanceItemCategory =
-  | "Car & Transport"
+  | "Transport"
   | "Financial"
   | "Food"
   | "Health"

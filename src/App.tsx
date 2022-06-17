@@ -26,7 +26,7 @@ const balanceItems: BalanceItem[] = [
     name: "Gas",
     amount: 100,
     type: "expense",
-    category: "Car & Transport",
+    category: "Transport",
   },
   {
     id: 4,
