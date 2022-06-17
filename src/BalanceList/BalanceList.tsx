@@ -1,4 +1,4 @@
-import { StyledBalanceListItem } from "../styles/BalanceListItem.Styled";
+import { StyledBalanceListItem } from "../styles/BalanceListItem.styled";
 import { BalanceItem } from "./models/BalanceItem";
 
 type BalanceListProps = {

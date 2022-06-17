@@ -4,7 +4,7 @@ import * as Yup from "yup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { StyledForm } from "./Form/Form.styled";
+import { StyledForm } from "../styles/Form.styled";
 
 import { BalanceItemCategory } from "../BalanceList/models/BalanceItem";
 import { GenericInput } from "../shared/GenericInput";
