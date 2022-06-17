@@ -1,8 +1,8 @@
 import { DefaultTheme, ThemeProvider } from "styled-components";
 import AddExpenseForm from "./AddExpense/AddExpenseForm";
 import BalanceList from "./BalanceList/BalanceList";
-import { BalanceItem } from "./BalanceList/models/BalanceItem";
-import { StyledHeader } from "./Header/Header.styled";
+import { BalanceItem } from "./models/BalanceItem";
+import { StyledHeader } from "./styles/Header.styled";
 import Container from "./styles/Container.styled";
 import GlobalStyles from "./styles/Global";
 

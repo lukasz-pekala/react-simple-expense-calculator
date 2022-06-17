@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BalanceListItem from "../BalanceList/BalanceListItem/BalanceListItem";
+import BalanceListItem from "../BalanceList/BalanceListItem";
 
 export const StyledBalanceListItem = styled(BalanceListItem)`
   display: flex;

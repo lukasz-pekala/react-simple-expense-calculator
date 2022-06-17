@@ -1,5 +1,5 @@
-import { BalanceItem } from "../models/BalanceItem";
 import CurrencyFormat from "react-currency-format";
+import { BalanceItem } from "../models/BalanceItem";
 
 type BalanceListItemProps = {
   item: BalanceItem;

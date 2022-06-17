@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { StyledForm } from "../styles/Form.styled";
 
-import { BalanceItemCategory } from "../BalanceList/models/BalanceItem";
+import { BalanceItemCategory } from "../models/BalanceItem";
 import { GenericInput } from "../shared/GenericInput";
 import { StyledGenericInput } from "../styles/GenericInput.styled";
 
