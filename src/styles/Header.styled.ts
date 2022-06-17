@@ -5,6 +5,6 @@ export const StyledHeader = styled.header`
   background-color: "#ffda79";
   width: 100%;
   padding-bottom: 1em;
-  border-bottom: 1px solid #ffda79;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.spicedButternut};
   margin-bottom: 10px;
 `;

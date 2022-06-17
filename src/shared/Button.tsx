@@ -8,7 +8,8 @@ const Button = styled.button<ButtonProps>`
   cursor: pointer;
 
   /* Adapt the colors based on primary prop */
-  background: ${({ primary }) => (primary ? "#2c2c54" : "#b33939")};
+  background: ${({ primary, theme }) =>
+    primary ? theme.colors.luckyPoint : theme.colors.eyeOfTheNewt};
   color: white;
 
   font-size: 1em;
@@ -19,7 +20,8 @@ const Button = styled.button<ButtonProps>`
   border-radius: 3px;
 
   &:hover {
-    background: ${({ primary }) => (primary ? "#40407a" : "#ff5252")};
+    background: ${({ primary, theme }) =>
+      primary ? theme.colors.jacksonsPurple : theme.colors.fluorescentRed};
   }
 `;
 

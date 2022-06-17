@@ -10,14 +10,14 @@ export const StyledGenericInput = styled.div`
   select {
     font-size: 1em;
     padding: 0.5em;
-    border: 1px solid #d1ccc0;
+    border: 1px solid ${({ theme }) => theme.colors.crocodileTooth};
   }
 
   input.error {
-    border: 1px solid #ff5252;
+    border: 1px solid ${({ theme }) => theme.colors.fluorescentRed};
   }
 
   div.error {
-    color: #ff5252;
+    color: ${({ theme }) => theme.colors.fluorescentRed};
   }
 `;

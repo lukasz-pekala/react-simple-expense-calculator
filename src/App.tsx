@@ -1,4 +1,4 @@
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import AddExpenseForm from "./AddExpense/AddExpenseForm";
 import BalanceList from "./BalanceList/BalanceList";
 import { BalanceItem } from "./models/BalanceItem";
@@ -43,25 +43,20 @@ const balanceItems: BalanceItem[] = [
     category: "Work",
   },
 ];
-
-const theme = {
-  colors: {
-    palmSpringsSplash: "#218c74",
-    eyeOfTheNewt: "#b33939",
-  },
-} as DefaultTheme;
+import { FlatuicolorsSpain } from "./styles/Theme";
+import { BalanceItems } from "./data/BalanceItems";
 
 function App() {
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={FlatuicolorsSpain}>
         <GlobalStyles />
         <Container>
           <StyledHeader>
             <h1>Expense App</h1>
           </StyledHeader>
           <AddExpenseForm />
-          <BalanceList items={balanceItems} />
+          <BalanceList items={BalanceItems} />
         </Container>
       </ThemeProvider>
     </>
