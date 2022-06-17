@@ -5,10 +5,11 @@ A simple app for managing earnings and expenses. Only front-end.
 # Tech stack
 
 - React
-- Redux ?
+- Redux
 - Styled Components
 - TypeScript
-- Formik ?
+- Formik
+- Yup
 
 # Used libs
 
