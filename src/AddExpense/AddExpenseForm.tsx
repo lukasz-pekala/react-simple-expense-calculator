@@ -9,6 +9,7 @@ import { StyledForm } from "../styles/Form.styled";
 import { BalanceItemCategory } from "../models/BalanceItem";
 import { GenericInput } from "../shared/GenericInput";
 import { StyledGenericInput } from "../styles/GenericInput.styled";
+import SwitchableRadioGroup from "../styles/SwitchableRadioGroup";
 
 const categories: BalanceItemCategory[] = [
   "Transport",
@@ -53,27 +54,24 @@ const AddExpenseForm = () => {
               </Field>
             </StyledGenericInput>
 
-            <div role="group" aria-labelledby="category">
-              {categories.map((category) => (
-                <>
-                  <label>
-                    <Field type="radio" name="category" value={category} />
-                    {category}
-                  </label>
-                </>
-              ))}
-            </div>
-
-            <div role="group" aria-labelledby="transaction-type">
-              <label>
-                <Field type="radio" name="type" value="expense" />
-                Expense
-              </label>
-              <label>
-                <Field type="radio" name="type" value="income" />
-                Income
-              </label>
-            </div>
+            <StyledGenericInput>
+              Category
+              <SwitchableRadioGroup role="group" aria-labelledby="category">
+                {categories.map((category) => (
+                  <>
+                    <label>
+                      <Field
+                        key={category}
+                        type="radio"
+                        name="category"
+                        value={category}
+                      />
+                      {category}
+                    </label>
+                  </>
+                ))}
+              </SwitchableRadioGroup>
+            </StyledGenericInput>
 
             <Button primary type="submit">
               <FontAwesomeIcon className="action-icon" icon={faPlus} />

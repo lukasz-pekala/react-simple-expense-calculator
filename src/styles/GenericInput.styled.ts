@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledGenericInput = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   font-size: 1em;
 
   input,
