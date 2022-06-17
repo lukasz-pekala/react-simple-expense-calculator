@@ -1,52 +1,24 @@
-import Button from "../shared/Button/Button";
-import { Field, Formik, useField } from "formik";
+import Button from "../shared/Button";
+import { Field, Formik } from "formik";
 import * as Yup from "yup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { StyledForm } from "./Form/Form.styled";
-import styled from "styled-components";
 
-const StyledGenericInput = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 1em;
+import { BalanceItemCategory } from "../BalanceList/models/BalanceItem";
+import { GenericInput } from "../shared/GenericInput";
+import { StyledGenericInput } from "../styles/GenericInput.styled";
 
-  input,
-  select {
-    font-size: 1em;
-    padding: 0.5em;
-    border: 1px solid #d1ccc0;
-  }
-
-  input.error {
-    border: 1px solid #ff5252;
-  }
-
-  div.error {
-    color: #ff5252;
-  }
-`;
-
-const GenericInput = ({ children, type = "text", ...props }: any) => {
-  const [field, meta] = useField(props);
-
-  return (
-    <StyledGenericInput>
-      <label htmlFor="name">{children}</label>
-      <input
-        type={type}
-        {...field}
-        {...props}
-        className={meta.touched && meta.error ? "error" : null}
-      />
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </StyledGenericInput>
-  );
-};
+const categories: BalanceItemCategory[] = [
+  "Transport",
+  "Financial",
+  "Food",
+  "Health",
+  "Home",
+  "Other",
+  "Work",
+];
 
 const AddExpenseForm = () => {
   return (
@@ -80,6 +52,28 @@ const AddExpenseForm = () => {
                 <option value="income">Income</option>
               </Field>
             </StyledGenericInput>
+
+            <div role="group" aria-labelledby="category">
+              {categories.map((category) => (
+                <>
+                  <label>
+                    <Field type="radio" name="category" value={category} />
+                    {category}
+                  </label>
+                </>
+              ))}
+            </div>
+
+            <div role="group" aria-labelledby="transaction-type">
+              <label>
+                <Field type="radio" name="type" value="expense" />
+                Expense
+              </label>
+              <label>
+                <Field type="radio" name="type" value="income" />
+                Income
+              </label>
+            </div>
 
             <Button primary type="submit">
               <FontAwesomeIcon className="action-icon" icon={faPlus} />
