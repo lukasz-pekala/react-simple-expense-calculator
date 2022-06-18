@@ -4,6 +4,7 @@ const SwitchableRadioGroup = styled.div`
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 
   input[type="radio"] {
     opacity: 0;
@@ -17,7 +18,7 @@ const SwitchableRadioGroup = styled.div`
     padding: 10px 20px;
     cursor: pointer;
     color: #fff;
-    min-width: 110px;
+    min-width: 100px;
     text-align: center;
     border-radius: 3px;
   }
