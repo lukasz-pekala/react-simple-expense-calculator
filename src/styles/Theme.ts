@@ -14,5 +14,6 @@ export const FlatuicolorsSpain = {
     devilBlue: "#227093",
     summerSky: "#34ace0",
     hotStone: "#aaa69d",
+    mandarinSorbet: "#ffb142",
   },
 } as DefaultTheme;

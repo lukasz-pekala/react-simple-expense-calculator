@@ -6,11 +6,11 @@ const SwitchableRadioGroup = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  input[type="radio"] {
-    opacity: 0;
-    position: fixed;
-    width: 0;
-  }
+  // input[type="radio"] {
+  //   opacity: 0;
+  //   position: fixed;
+  //   width: 0;
+  // }
 
   label {
     display: inline-block;
@@ -24,7 +24,15 @@ const SwitchableRadioGroup = styled.div`
   }
 
   label:hover {
+    background-color: ${({ theme }) => theme.colors.mandarinSorbet};
+  }
+
+  label > input[type="radio"]:checked {
     background-color: ${({ theme }) => theme.colors.devilBlue};
+  }
+
+  input[type="radio"]:focus + label {
+    border: 2px dashed #444;
   }
 `;
 
