@@ -6,8 +6,16 @@ import Container from "./styles/Container.styled";
 import GlobalStyles from "./styles/Global";
 import { FlatuicolorsSpain } from "./styles/Theme";
 import { BalanceItems } from "./data/BalanceItems";
+import { useState } from "react";
+import { BalanceItem } from "./models/BalanceItem";
 
 function App() {
+  const [balanceItems, setBalanceItems] = useState<BalanceItem[]>(BalanceItems);
+
+  const handleBalanceAdded = (balanceItem: BalanceItem) => {
+    setBalanceItems([...balanceItems, balanceItem]);
+  };
+
   return (
     <>
       <ThemeProvider theme={FlatuicolorsSpain}>
@@ -16,8 +24,8 @@ function App() {
           <StyledHeader>
             <h1>Expense App</h1>
           </StyledHeader>
-          <AddExpenseForm />
-          <BalanceList items={BalanceItems} />
+          <AddExpenseForm onBalanceAdded={handleBalanceAdded} />
+          <BalanceList items={balanceItems} />
         </Container>
       </ThemeProvider>
     </>
