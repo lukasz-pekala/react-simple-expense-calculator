@@ -37,7 +37,9 @@ const AddExpenseForm = ({ onBalanceAdded }: AddExpenseFormProps) => {
         initialValues={{ name: "", amount: "", type: "expense", category: "" }}
         validationSchema={Yup.object({
           name: Yup.string().required("Name is required"),
-          amount: Yup.number().required("Amount is required"),
+          amount: Yup.number()
+            .required("Amount is required")
+            .min(0, "Amount must be positive"),
           type: Yup.string().oneOf(["expense", "income"]),
           category: Yup.string().oneOf(categories),
         })}
