@@ -8,6 +8,7 @@ import { FlatuicolorsSpain } from "./styles/Theme";
 import { BalanceItems } from "./data/BalanceItems";
 import { useState } from "react";
 import { BalanceItem } from "./models/BalanceItem";
+import BalanceSummary from "./BalanceSummary";
 
 function App() {
   const [balanceItems, setBalanceItems] = useState<BalanceItem[]>(BalanceItems);
@@ -16,6 +17,8 @@ function App() {
     setBalanceItems([...balanceItems, balanceItem]);
   };
 
+  let totalBalance = balanceItems.reduce((acc, item) => acc + item.amount, 0);
+
   return (
     <>
       <ThemeProvider theme={FlatuicolorsSpain}>
@@ -23,6 +26,7 @@ function App() {
         <Container>
           <StyledHeader>
             <h1>Expense App</h1>
+            <BalanceSummary balance={totalBalance} />
           </StyledHeader>
           <AddExpenseForm onBalanceAdded={handleBalanceAdded} />
           <BalanceList items={balanceItems} />
