@@ -14,6 +14,10 @@ function App() {
   const [balanceItems, setBalanceItems] = useState<BalanceItem[]>(BalanceItems);
 
   const handleBalanceAdded = (balanceItem: BalanceItem) => {
+    if (balanceItem.type === "expense" && balanceItem.amount > 0) {
+      balanceItem.amount *= -1;
+    }
+
     setBalanceItems([...balanceItems, balanceItem]);
   };
 
