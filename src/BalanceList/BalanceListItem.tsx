@@ -1,3 +1,5 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CurrencyFormat from "react-currency-format";
 import { BalanceItem } from "../models/BalanceItem";
 
@@ -20,6 +22,9 @@ const BalanceListItem = ({ item, className }: BalanceListItemProps) => {
       </div>
       <div>{item.type}</div>
       <div>{item.category}</div>
+      <div>
+        <FontAwesomeIcon className="action-icon" icon={faTrash} />
+      </div>
     </section>
   );
 };

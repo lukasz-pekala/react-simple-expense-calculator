@@ -18,4 +18,13 @@ export const StyledBalanceListItem = styled(BalanceListItem)`
   div {
     flex: 1;
   }
+
+  .action-icon {
+    color: ${({ theme }) => theme.colors.spicedButternut};
+    cursor: pointer;
+  }
+
+  .action-icon:hover {
+    color: ${({ theme }) => theme.colors.mandarinSorbet};
+  }
 `;

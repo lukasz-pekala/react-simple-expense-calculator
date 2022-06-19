@@ -1,4 +1,4 @@
-import Button from "../shared/Button";
+import Button from "../shared/Button.styled";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
 
