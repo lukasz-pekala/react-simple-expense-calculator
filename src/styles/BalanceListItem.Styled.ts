@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import BalanceListItem from "../BalanceList/BalanceListItem";
+import { BalanceItemType } from "../models/BalanceItem";
 
-export const StyledBalanceListItem = styled(BalanceListItem)`
+export const StyledBalanceListItem = styled.section<{ type: BalanceItemType }>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,8 +10,8 @@ export const StyledBalanceListItem = styled(BalanceListItem)`
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-left: 5px solid
-    ${({ theme, item }) =>
-      item.type === "income"
+    ${({ theme, type }) =>
+      type === "income"
         ? theme.colors.palmSpringsSplash
         : theme.colors.eyeOfTheNewt};
 

@@ -1,16 +1,21 @@
 import { BalanceItem } from "../models/BalanceItem";
-import { StyledBalanceListItem } from "../styles/BalanceListItem.styled";
+import BalanceListItem from "./BalanceListItem";
 
 type BalanceListProps = {
   items: BalanceItem[];
+  handleRemove: (item: BalanceItem) => void;
 };
 
-const BalanceList = ({ items }: BalanceListProps) => {
+const BalanceList = ({ items, handleRemove }: BalanceListProps) => {
   return (
     <div>
       <h2>Earnings and expenses</h2>
       {items.map((item) => (
-        <StyledBalanceListItem key={item.id} item={item} />
+        <BalanceListItem
+          key={item.id}
+          item={item}
+          handleRemove={handleRemove}
+        />
       ))}
     </div>
   );

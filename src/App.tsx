@@ -17,6 +17,10 @@ function App() {
     setBalanceItems([...balanceItems, balanceItem]);
   };
 
+  const handleRemove = (balanceItem: BalanceItem) => {
+    setBalanceItems(balanceItems.filter((item) => item.id !== balanceItem.id));
+  };
+
   let totalBalance = balanceItems.reduce((acc, item) => acc + item.amount, 0);
 
   return (
@@ -29,7 +33,7 @@ function App() {
             <BalanceSummary balance={totalBalance} />
           </StyledHeader>
           <AddExpenseForm onBalanceAdded={handleBalanceAdded} />
-          <BalanceList items={balanceItems} />
+          <BalanceList items={balanceItems} handleRemove={handleRemove} />
         </Container>
       </ThemeProvider>
     </>
