@@ -22,3 +22,8 @@ A simple app for managing earnings and expenses. Only front-end.
 # Design
 
 Nothing fancy here. Color palette is: https://flatuicolors.com/palette/es
+
+# Known issues
+
+- Category radio buttons should be redone to enable user clicks on the label
+- alignment in the table could be improved
